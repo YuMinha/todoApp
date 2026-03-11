@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Todo App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .todo-container { max-width: 500px; margin-top: 50px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .todo-item { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding: 10px 0; }
+        .todo-item:last-child { border-bottom: none; }
+    </style>
+</head>
+<body>
+
+<div class="container todo-container">
+    <h2 class="text-center mb-4 text-primary">📝 Todo List</h2>
+
+    <form method="post" action="/addTodo" class="input-group mb-4">
+        <input type="text" name="todo" class="form-control" placeholder="할 일을 입력하세요..." required>
+        <button class="btn btn-primary" type="submit">추가</button>
+    </form>
+
+    <hr>
+
+    <ul class="list-unstyled">
+        <li th:each="todo : ${todos}" class="todo-item">
+            <div class="flex-grow-1 d-flex align-items-center">
+                <form th:action="@{/toggleTodo/{id}(id=${todo.id})}" method="post" style="display:inline;">
+                    <input type="checkbox" class="form-check-input me-2" th:checked="${todo.completed}" onchange="this.form.submit()">
+                </form>
+
+                <span th:id="'text-' + ${todo.id}"
+                      th:text="${todo.todo}"
+                      th:classappend="${todo.completed} ? 'text-decoration-line-through text-muted' : ''">
+                </span>
+
+                <form th:id="'edit-form-' + ${todo.id}" th:action="@{/updateTodo/{id}(id=${todo.id})}" method="post" class="d-none align-items-center gap-2 flex-grow-1 me-3">
+                    <input type="text" name="todo" th:value="${todo.todo}" class="form-control form-control-sm flex-grow-1">
+                    <div class="d-flex gap-1">
+                        <button type="submit" class="btn btn-sm btn-outline-success text-nowrap">확인</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary text-nowrap" th:onclick="'toggleEdit(' + ${todo.id} + ')'">취소</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="d-flex gap-1">
+                <button th:id="'edit-btn-' + ${todo.id}" class="btn btn-sm btn-outline-warning" th:onclick="'toggleEdit(' + ${todo.id} + ')'">수정</button>
+
+                <form th:action="@{/deleteTodo/{id}(id=${todo.id})}" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('정말 삭제할까요?')">삭제</button>
+                </form>
+            </div>
+        </li>
+        <li th:if="${#lists.isEmpty(todos)}" class="text-center text-muted mt-3">
+            아직 등록된 할 일이 없어요!
+        </li>
+    </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function toggleEdit(id) {
+        const textSpan = document.getElementById('text-' + id);
+        const editForm = document.getElementById('edit-form-' + id);
+        const editBtn = document.getElementById('edit-btn-' + id);
+
+        editForm.classList.toggle('d-none');
+        editForm.classList.toggle('d-flex');
+
+        if (textSpan.style.display === 'none') {
+            textSpan.style.display = 'inline';
+            editBtn.style.display = 'inline-block';
+        } else {
+            textSpan.style.display = 'none';
+            editBtn.style.display = 'none';
+        }
+    }
+</script>
+</body>
+</html>
