@@ -200,8 +200,6 @@ method="post">
 
 ### 🧱 환경 구축
 
-[docker, mysql 설정](docker,%20mysql%20%EC%84%A4%EC%A0%95%2032066b347f6080c19142d41b7764e094.md)
-
 - Docker와 MySQL을 활용해 로컬 개발 환경을 구성하고, SpringBoot와 데이터베이스를 연동했습니다.
 
 ### 🎨 화면 설계
