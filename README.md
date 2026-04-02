@@ -44,17 +44,21 @@
 
 : 기본적인 데이터 생성 및 삭제 기능
 
-![스크린샷 2026-03-11 162003.png](%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2026-03-11_162003.png)
+<img width="683" height="343" alt="스크린샷 2026-03-11 162003" src="https://github.com/user-attachments/assets/37e6eba2-4b08-4f4f-b80f-5958aa73ed6a" />
 
-![스크린샷 2026-03-11 162014.png](%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2026-03-11_162014.png)
+<img width="645" height="362" alt="스크린샷 2026-03-11 162014" src="https://github.com/user-attachments/assets/0e384529-a00f-4751-93c8-9a23c47e37e5" />
+
 
 - 사용자가 텍스트를 입력하고 `추가` 버튼을 누르면 실시간으로 리스트에 반영됩니다.
 
-![스크린샷 2026-03-11 162044.png](%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2026-03-11_162044.png)
+<img width="651" height="609" alt="스크린샷 2026-03-11 162044" src="https://github.com/user-attachments/assets/ff07fde7-cc6e-4c23-b857-2ec9c2c02933" />
 
-![스크린샷 2026-03-11 162051.png](%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2026-03-11_162051.png)
 
-![스크린샷 2026-03-11 162100.png](%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2026-03-11_162100.png)
+<img width="695" height="678" alt="스크린샷 2026-03-11 162051" src="https://github.com/user-attachments/assets/7bfe5656-2e70-4961-aa18-12d2b54642f0" />
+
+
+<img width="655" height="554" alt="스크린샷 2026-03-11 162100" src="https://github.com/user-attachments/assets/e0c14d85-be85-4763-96e8-c2cc4f65adcc" />
+
 
 - 불필요한 항목은 `삭제` 버튼으로 즉시 제거하며, 실수 방지를 위해 확인 창을 띄우도록 했습니다.
 
@@ -62,9 +66,11 @@
 
 : 체크박스를 이용한 완료 상태 업데이트
 
-![image.png](image.png)
+<img width="655" height="420" alt="스크린샷 2026-04-02 151312" src="https://github.com/user-attachments/assets/cdd9bdee-4985-4c51-8a6c-2dd6a6d0f6ef" />
 
-![image.png](image%201.png)
+
+<img width="639" height="414" alt="스크린샷 2026-04-02 151319" src="https://github.com/user-attachments/assets/8b7f9d4b-2de4-4320-b43d-94d31f1f445b" />
+
 
 - 할 일 완료 시 체크 박스를 누르면 서버에 반영되며, 취소선 처리를 통해 시각적으로 완료 상태를 보여줍니다.
 
@@ -72,11 +78,14 @@
 
 : 페이지 이동 없이 그 자리에서 바로 할 일 수정
 
-![스크린샷 2026-04-02 151516.png](%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2026-04-02_151516.png)
+<img width="642" height="409" alt="스크린샷 2026-04-02 151516" src="https://github.com/user-attachments/assets/19854a52-c0d4-41ac-962b-67fdd505a504" />
 
-![image.png](image%202.png)
 
-![스크린샷 2026-04-02 151534.png](%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2026-04-02_151534.png)
+<img width="640" height="409" alt="스크린샷 2026-04-02 151505" src="https://github.com/user-attachments/assets/e11a465e-b775-469f-8f31-6bd2f1d7db12" />
+
+
+<img width="649" height="409" alt="스크린샷 2026-04-02 151534" src="https://github.com/user-attachments/assets/2b8025eb-c518-4ff6-a128-1b99dee82879" />
+
 
 - 사용자가 `수정` 버튼을 누르면 그 자리에서 수정이 가능합니다.
 - 수정 창에서 수정 후 `확인` 버튼을 누르면 반영되고 `취소` 버튼을 누르면 반영되지 않습니다.
