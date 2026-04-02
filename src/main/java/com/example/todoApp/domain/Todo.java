@@ -5,7 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.antlr.v4.runtime.misc.NotNull;
+import jakarta.validation.constraints.NotBlank;
+
 
 @Entity(name = "Todo")
 @Table(name = "todo")
@@ -17,7 +18,7 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @NotBlank
     private String todo;
 
     private Boolean completed = false;
